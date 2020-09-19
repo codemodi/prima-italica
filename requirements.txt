@@ -1,0 +1,6 @@
+Django
+Flake8
+Pytest
+python-decouple
+dj-database-url
+psycopg2
