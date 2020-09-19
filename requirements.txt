@@ -4,3 +4,4 @@ Pytest
 python-decouple
 dj-database-url
 psycopg2
+djangorestframework
