@@ -6,10 +6,10 @@ services:
     container_name: prima_italica_app
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-    - .:/home/django/app
+      - .:/home/django/app
     ports:
-    # "host:container"
-    - "8000:8000"
+      # "host:container"
+      - "8000:8000"
     depends_on:
       - db
 
