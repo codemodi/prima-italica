@@ -4,12 +4,26 @@ python:
   - 3.8
 
 services:
-  - docker
+  - postgresql
 
-before_install:
-  - docker build -t  prima_italica .
+addons:
+  postgresql: '9.5'
 
+env:
+  global:
+    - PIPENV_VENV_IN_PROJECT=1
+    - PIPENV_IGNORE_VIRTUALENVS=1
+
+install:
+  - pip install pipenv
+  - pipenv sync -d
+  - cp contrib/env-sample .env
+
+before_script:
+  - psql -c "CREATE DATABASE testdb;" -U postgres
 script:
-  - docker run prima_italica /bin/sh -c "pipenv run pytest"
-  - docker run prima_italica /bin/sh -c "pipenv run flake8"
+  - pipenv run flake8 pypro
+  - pipenv run pytest --cov=pypro
 
+after_success:
+  - pipenv run codecov
