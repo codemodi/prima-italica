@@ -1,6 +1,6 @@
 Django
 Flake8
-Pytest
+Pytest-django
 python-decouple
 dj-database-url
 psycopg2
