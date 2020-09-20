@@ -10,7 +10,6 @@ before_install:
   - docker build -t  prima_italica .
 
 script:
-  - docker run prima_italica /bin/sh -c "pytest"
-  - docker run prima_italica /bin/sh -c "flake8"
-  - pytest
+  - docker run prima_italica /bin/sh -c "pipenv run pytest"
+  - docker run prima_italica /bin/sh -c "pipenv run flake8"
 
