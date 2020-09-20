@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path
 
-from app import views
+from prima_italica.app import views
 
 app_name = 'app'
 urlpatterns = [
