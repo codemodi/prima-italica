@@ -10,13 +10,18 @@ USER django
 
 # force the output to terminal
 ENV PYTHONUNBUFFERED 1
-
-WORKDIR /home/django/app
-
+ENV PIPENV_VENV_IN_PROJECT 1
+ENV PIPENV_IGNORE_VIRTUALENVS 1
 # Update path for the new user, for using python and django command
 ENV PATH $PATH:/home/django/.local/bin
 
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+WORKDIR /home/django/app
+
+RUN pip install pipenv
+COPY Pipfile* ./
+RUN pipenv install --system
 
 COPY . .
+
+#CMD [ "whoami" ]
+CMD python manage.py runserver 0.0.0.0:8000
