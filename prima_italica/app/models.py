@@ -26,4 +26,3 @@ class Acao(models.Model):
     def __str__(self):
         """Return the model as String"""
         return f'{self.nome_acao} - {self.instituicao_organizadora}'
-

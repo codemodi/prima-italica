@@ -18,6 +18,7 @@ def test_acao_list(api_client):
     response = api_client.get(url)
     assert response.status_code == 200
 
+
 @pytest.mark.parametrize(
     'nome_acao, instituicao_organizadora, endereco, bairro, cidade, descricao, status_code', [
         ('', '', '', '', '', '', 400),

@@ -5,4 +5,3 @@ from prima_italica.app import models
 
 admin.site.register(models.Voluntario)
 admin.site.register(models.Acao)
-
