@@ -1,9 +1,11 @@
 from rest_framework import serializers
+
 from prima_italica.app import models
 
 
 class VoluntarioSerializer(serializers.ModelSerializer):
     """Serializer for Voluntario"""
+
     class Meta:
         model = models.Voluntario
         fields = (
@@ -17,6 +19,7 @@ class VoluntarioSerializer(serializers.ModelSerializer):
 
 class AcaoSerializer(serializers.ModelSerializer):
     """Serializer for Voluntario"""
+
     class Meta:
         model = models.Acao
         fields = (
